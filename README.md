@@ -2,6 +2,10 @@
 
 Instagram clone
 
+##Code Status
+
+[![Build Status](https://api.travis-ci.org/kensupermen/instagram.svg?branch=develop)](http://travis-ci.org/kensupermen/instagram)
+
 ## Teachnogogy
 
 - Ruby On Rails (Backend)
@@ -21,6 +25,9 @@ Instagram clone
 ## How to run
 
 Make sure you install `yarn` and install all package dependent
+
+Please install ImageMagick
+In MacOS: `brew install imagemagick`
 
 ```
 yarn install
