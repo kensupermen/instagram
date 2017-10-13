@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 2.4.1
+
+addons:
+  postgresql: "9.6.5"
+
+before_script:
+- bundle exec rake db:create db:migrate RAILS_ENV=test
+
+script:
+  - bundle exec rspec
