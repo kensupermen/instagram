@@ -2,5 +2,8 @@
   div#root
   div#title
   div#body
+    - @posts.each do |post|
+      = image_tag post.image.url(:medium)
+      = post.caption
 
 = javascript_pack_tag 'index'
