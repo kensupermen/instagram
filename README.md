@@ -26,6 +26,9 @@ Instagram clone
 
 Make sure you install `yarn` and install all package dependent
 
+Please install ImageMagick
+In MacOS: `brew install imagemagick`
+
 ```
 yarn install
 ```
