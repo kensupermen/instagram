@@ -1,24 +1,34 @@
-# README
+# Instagram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instagram clone
 
-Things you may want to cover:
+## Teachnogogy
 
-* Ruby version
+- Ruby On Rails (Backend)
+- ReactJS (Frontend)
+- Postgresql (Database)
+- Redis to cache session and query
+- AWS S3 to save photos
 
-* System dependencies
+## Contributing
 
-* Configuration
+1. Fork it! (maybe and start it ^^)
+2. Create your feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Submit a pull request to develop branch :D
 
-* Database creation
+## How to run
 
-* Database initialization
+Make sure you install `yarn` and install all package dependent
 
-* How to run the test suite
+```
+yarn install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Run 
+```
+bin/server
+```
 
-* Deployment instructions
-
-* ...
+Open your browser: localhost:3000
