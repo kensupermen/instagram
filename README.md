@@ -2,6 +2,10 @@
 
 Instagram clone
 
+##Code Status
+
+[![Build Status](https://api.travis-ci.org/kensupermen/instagram.svg?branch=develop)](http://travis-ci.org/kensupermen/instagram)
+
 ## Teachnogogy
 
 - Ruby On Rails (Backend)
