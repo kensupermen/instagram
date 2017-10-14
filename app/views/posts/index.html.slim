@@ -2,8 +2,11 @@
   div#root
   div#title
   div#body
-    - @posts.each do |post|
-      = image_tag post.image.url(:medium)
-      = post.caption
+    .post
+      - @posts.each do |post|
+        .image
+          = image_tag post.image.url(:medium)
+        .caption
+          = post.caption
 
 = javascript_pack_tag 'index'

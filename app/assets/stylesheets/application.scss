@@ -3,3 +3,20 @@
 .container.page {
   margin-top: 30px;
 }
+
+.post {
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 0;
+  display: block;
+  border: 1px solid red;
+
+  .image {
+    border: 1px solid black;
+    padding-left: 100px;
+    padding-right: 40px;
+  }
+  
+  .caption {
+  }
+}
