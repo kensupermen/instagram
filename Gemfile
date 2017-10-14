@@ -39,7 +39,7 @@ gem 'slim-rails'
 gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'simple_form'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 
 group :development, :test do
