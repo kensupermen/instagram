@@ -1,16 +1,19 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
   .container
-    a.navbar-brand[href="#"]
+    a.navbar-brand[href="/"]
       | Instagram
     ul.navbar-nav.navbar-right
-      li.nav-item.active
-        a.nav-link[href="#"]
-          | Expore
-          span.sr-only
-            | (current)
-      li.nav-item
-        a.nav-link[href="#"]
-          | Notification
-      li.nav-item
-        a.nav-link.disabled[href="#"]
-          | Profile
+      - if current_user
+        li.nav-item.active
+          = link_to 'New Post', new_post_path, class: 'nav-link'
+        li.nav-item
+          a.nav-link[href="#"]
+            = current_user.email
+        li.nav-item
+          a.nav-link.disabled[href="#"]
+            | Sign Out
+      - else
+        li.nav-item
+          = link_to 'Sign In', new_user_session_path, class: 'nav-link'
+        li.nav-item
+          = link_to 'Sign Up', new_user_registration_path, class: 'nav-link'

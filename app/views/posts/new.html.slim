@@ -1,10 +1,11 @@
-.container.page
-  div#root
-  div#title
-  div#body
+.container
+  .page
     = simple_form_for @post do |f|
-      = f.input :image
-      = f.input :caption
-      = f.button :submit
+      .form-group
+        = f.input :image
+      .form-group
+        = f.input :caption
+      .form-group
+        = f.button :submit
 
 = javascript_pack_tag 'index'
