@@ -26,3 +26,18 @@
     margin: 10px;
   }
 }
+
+.modal.show .modal-dialog {
+    margin: 0 auto;
+}
+
+.modal.fade .modal-dialog {
+    transition: initial;
+    transform: initial;
+}
+
+@media (min-width: 1024px) {
+  .modal-dialog {
+    max-width: 720px;
+  }
+}
