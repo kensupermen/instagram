@@ -2,7 +2,7 @@
 
 Instagram clone
 
-##Code Status
+## Code Status
 
 [![Build Status](https://api.travis-ci.org/kensupermen/instagram.svg?branch=develop)](http://travis-ci.org/kensupermen/instagram)
 
@@ -13,6 +13,20 @@ Instagram clone
 - Postgresql (Database)
 - Redis to cache session and query
 - AWS S3 to save photos
+
+## User stories
+
+* [x] User can login, logout.
+* [x] User can upload images.
+* [x] User can post image with caption.
+* [ ] User can comment on image.
+* [ ] User can like images.
+* [ ] User can add hastag.
+* [ ] User can see a profile.
+* [ ] User can follow another people.
+* [ ] Host images to AWS S3.
+* [ ] Cache query.
+
 
 ## Contributing
 
