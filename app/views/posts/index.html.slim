@@ -1,12 +1,13 @@
-.container.page
-  div#root
-  div#title
-  div#body
-    .post
+.container
+  .page
+    .row
       - @posts.each do |post|
-        .image
-          = image_tag post.image.url(:medium)
-        .caption
-          = post.caption
+        .post
+          div.username
+            | kensupermen
+          div.image
+            = image_tag post.image.url(:medium)
+          div.caption
+            = post.caption
 
 = javascript_pack_tag 'index'

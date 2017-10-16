@@ -1,22 +1,28 @@
 @import "bootstrap";
 
-.container.page {
-  margin-top: 30px;
+.container {
+  .page {
+    margin: 20px;
+  }
 }
 
 .post {
-  margin-left: 30px;
-  margin-right: 30px;
-  padding: 0;
+  margin: 20px auto;
+  min-height: 50px;
+  min-width: 50px;
   display: block;
-  border: 1px solid red;
+  border: 1px solid #e6e6e6;
+
+  .username {
+    min-height: 40px;
+    margin: 10px 20px;
+    font-weight: bold;
+  }
 
   .image {
-    border: 1px solid black;
-    padding-left: 100px;
-    padding-right: 40px;
   }
   
   .caption {
+    margin: 10px;
   }
 }
