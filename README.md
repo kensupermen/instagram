@@ -9,7 +9,7 @@ Instagram clone
 ## Teachnogogy
 
 - Ruby On Rails (Backend)
-- ReactJS (Frontend)
+- ReactJS + Typescript (Frontend)
 - Postgresql (Database)
 - Redis to cache session and query
 - AWS S3 to save photos
