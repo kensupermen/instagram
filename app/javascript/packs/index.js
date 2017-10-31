@@ -1,4 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-console.log('This is index.tsx')
+ReactDOM.render(
+  <h1>Ahihi</h1>,
+  document.getElementById("root")
+);

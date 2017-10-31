@@ -1,15 +1,15 @@
 .container
   .page
-    div.root
-      - @posts.each_with_index do |post, index|
-        .row
-          .post
-            div.username
-              | kensupermen
-            div.image data-toggle="modal" data-target="#showImage#{index}"
-              = image_tag post.image.url(:medium), class: 'img-fluid'
-            div.caption
-              = post.caption
+    div id="root"
+    - @posts.each_with_index do |post, index|
+      .row
+        .post
+          div.username
+            | kensupermen
+          div.image data-toggle="modal" data-target="#showImage#{index}"
+            = image_tag post.image.url(:medium), class: 'img-fluid'
+          div.caption
+            = post.caption
 
 - @posts.each_with_index do |post, index|
   div.modal.fade role="dialog" id="showImage#{index}"
