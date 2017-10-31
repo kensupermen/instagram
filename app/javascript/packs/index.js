@@ -1,7 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+import Post from "./components/post"
+
 ReactDOM.render(
-  <h1>Ahihi</h1>,
+  <Post></Post>,
   document.getElementById("root")
 );
