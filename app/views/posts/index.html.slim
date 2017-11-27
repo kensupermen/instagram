@@ -1,13 +1,5 @@
 .container
   .page
-    .row
-      - @posts.each do |post|
-        .post
-          div.username
-            | kensupermen
-          div.image
-            = image_tag post.image.url(:medium)
-          div.caption
-            = post.caption
+    div id="root"
 
 = javascript_pack_tag 'index'
