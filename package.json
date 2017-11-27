@@ -2,7 +2,7 @@
   "name": "instagram",
   "private": true,
   "engines": {
-    "node": "6.11.5",
+    "node": "8.7.0",
     "npm": "3.10.10",
     "yarn": "1.2.1"
   },
@@ -10,6 +10,7 @@
     "@types/react": "^16.0.10",
     "@types/react-dom": "^16.0.1",
     "autoprefixer": "^7.1.6",
+    "axios": "^0.17.1",
     "babel-core": "^6.26.0",
     "babel-loader": "7.x",
     "babel-preset-env": "^1.6.1",
