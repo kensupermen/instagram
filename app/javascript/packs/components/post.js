@@ -35,7 +35,7 @@ class Post extends React.Component {
               this.state.posts.map((post) => {
                 return (
                   <div key={post.id} className="post" >
-                    <div className="username">kensupermen</div>
+                    <div className="username">{post.first_name + " " + post.last_name}</div>
                     <div className="image">
                       <img src= { domain + post.image } alt="" />
                     </div>
