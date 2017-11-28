@@ -36,10 +36,15 @@ class Post extends React.Component {
                 return (
                   <div key={post.id} className="post" >
                     <div className="username">{post.first_name + " " + post.last_name}</div>
+                    <div className="caption">{post.caption}</div>
                     <div className="image">
                       <img src= { domain + post.image } alt="" />
                     </div>
-                    <div className="caption">{post.caption}</div>
+                    <hr />
+                    <div class="form-group">
+                      <input type="text" class='form-control' placeholder="Write a comment..."/>
+                      <div class="comments"></div>
+                    </div>
                   </div>
                 )
               })
