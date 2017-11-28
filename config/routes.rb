@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   scope :api, defaults: { format: :json } do
     scope :v1 do
       get 'posts/list', to: 'api/v1/posts#index'
+      post 'comments/create', to: 'api/v1/comments#create'
     end
   end
 end
