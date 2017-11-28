@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const prefixURL = '/api/v1/'
 const domain = 'http://' + window.location.host
+
 class Post extends React.Component {
   constructor(props) {
     super(props);
