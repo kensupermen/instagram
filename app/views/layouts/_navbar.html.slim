@@ -7,11 +7,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         li.nav-item.active
           = link_to 'New Post', new_post_path, class: 'nav-link'
         li.nav-item
-          a.nav-link[href="#"]
+          a.nav-link[href="/"]
             = current_user.email
         li.nav-item
-          a.nav-link.disabled[href="#"]
-            | Sign Out
+            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
       - else
         li.nav-item
           = link_to 'Sign In', new_user_session_path, class: 'nav-link'
