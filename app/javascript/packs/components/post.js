@@ -26,6 +26,17 @@ class Post extends React.Component {
       });
   }
 
+  _handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      let url = prefixURL + 'comments/create'
+      let params = {}
+      axios.post(url, params)
+        .then((response) => {
+          console.log(response)
+        })
+    }
+  }
+
   render() {
     return (
       <div className="container">
@@ -36,10 +47,29 @@ class Post extends React.Component {
                 return (
                   <div key={post.id} className="post" >
                     <div className="username">{post.first_name + " " + post.last_name}</div>
+                    <div className="caption">{post.caption}</div>
                     <div className="image">
                       <img src= { domain + post.image } alt="" />
                     </div>
-                    <div className="caption">{post.caption}</div>
+                    <hr />
+                    <div className="form-group">
+                      <input type="text" className='form-control' placeholder="Write a comment..." onKeyPress={this._handleKeyPress}/>
+                      <div className="comments">
+                        {console.log(post.comments)}
+                        {
+                          post.comments.map((comment) => {
+                            return (<div key={comment.id} className="comment">
+                              <div className="row">
+                                <div className="commenter">kensupermen</div>
+                                <div className="message">
+                                  {comment.message}
+                                </div>
+                              </div>
+                            </div>)
+                          })
+                        }
+                      </div>
+                    </div>
                   </div>
                 )
               })
