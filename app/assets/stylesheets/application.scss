@@ -8,6 +8,7 @@
 
 .post {
   margin: 20px auto;
+  padding: 10px;
   min-height: 50px;
   min-width: 50px;
   display: block;
@@ -15,15 +16,21 @@
 
   .username {
     min-height: 40px;
-    margin: 10px 20px;
+    margin: 10px 50px;
     font-weight: bold;
+    color: blue;
   }
 
   .image {
   }
   
   .caption {
-    margin: 10px;
+    margin: 10px 0px;
+  }
+
+  .commenter {
+    padding: 0px 10px;
+    color: blue;
   }
 }
 

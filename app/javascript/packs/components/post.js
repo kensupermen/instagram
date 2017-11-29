@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const prefixURL = '/api/v1/'
 const domain = 'http://' + window.location.host
+
 class Post extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +26,17 @@ class Post extends React.Component {
       });
   }
 
+  _handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      let url = prefixURL + 'comments/create'
+      let params = {}
+      axios.post(url, params)
+        .then((response) => {
+          console.log(response)
+        })
+    }
+  }
+
   render() {
     return (
       <div className="container">
@@ -34,11 +46,32 @@ class Post extends React.Component {
               this.state.posts.map((post) => {
                 return (
                   <div key={post.id} className="post" >
-                    <div className="username">kensupermen</div>
+                    <div className="username">{post.first_name + " " + post.last_name}</div>
+                    <div className="caption">{post.caption}</div>
                     <div className="image">
                       <img src= { domain + post.image } alt="" />
                     </div>
-                    <div className="caption">{post.caption}</div>
+                    <hr />
+                    <div className="form-group">
+                      <form action='api/v1/comments/create' method='post'>
+                        <input type="text" className='form-control' placeholder="Write a comment..." name='comment[message]' onKeyPress={this._handleKeyPress}/>
+                        <input type="hidden" name='comment[post_id]' value={post.id} />
+                      </form>
+                      <div className="comments">
+                        {
+                          post.comments.map((comment) => {
+                            return (<div key={comment.id} className="comment">
+                              <div className="row">
+                                <div className="commenter">kensupermen</div>
+                                <div className="message">
+                                  {comment.message}
+                                </div>
+                              </div>
+                            </div>)
+                          })
+                        }
+                      </div>
+                    </div>
                   </div>
                 )
               })
