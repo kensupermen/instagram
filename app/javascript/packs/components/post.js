@@ -53,9 +53,11 @@ class Post extends React.Component {
                     </div>
                     <hr />
                     <div className="form-group">
-                      <input type="text" className='form-control' placeholder="Write a comment..." onKeyPress={this._handleKeyPress}/>
+                      <form action='api/v1/comments/create' method='post'>
+                        <input type="text" className='form-control' placeholder="Write a comment..." name='comment[message]' onKeyPress={this._handleKeyPress}/>
+                        <input type="hidden" name='comment[post_id]' value={post.id} />
+                      </form>
                       <div className="comments">
-                        {console.log(post.comments)}
                         {
                           post.comments.map((comment) => {
                             return (<div key={comment.id} className="comment">
