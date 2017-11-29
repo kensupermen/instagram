@@ -4,10 +4,13 @@ Rails.application.routes.draw do
 
   root 'posts#index'
   resources :posts
+
   scope :api, defaults: { format: :json } do
     scope :v1 do
       get 'posts/list', to: 'api/v1/posts#index'
-      post 'comments/create', to: 'api/v1/comments#create'
+      get 'posts/:id', to: 'api/v1/posts#show'
+
+      post 'posts/:id/comments/create', to: 'api/v1/comments#create'
     end
   end
 end
