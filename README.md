@@ -6,6 +6,8 @@ Instagram clone
 
 [![Build Status](https://api.travis-ci.org/kensupermen/instagram.svg?branch=develop)](http://travis-ci.org/kensupermen/instagram)
 
+Demo: [Instagram](https://instagramclone2908.herokuapp.com/)
+
 ## Teachnogogy
 
 - Ruby On Rails (Backend)
@@ -19,7 +21,7 @@ Instagram clone
 * [x] User can login, logout.
 * [x] User can upload images.
 * [x] User can post image with caption.
-* [ ] User can comment on image.
+* [x] User can comment on image.
 * [ ] User can like images.
 * [ ] User can add hastag.
 * [ ] User can see a profile.
@@ -30,7 +32,7 @@ Instagram clone
 
 ## Contributing
 
-1. Fork it! (maybe and start it ^^)
+1. Fork it! (maybe start it ^^)
 2. Create your feature branch: git checkout -b my-new-feature
 3. Commit your changes: git commit -am 'Add some feature'
 4. Push to the branch: git push origin my-new-feature
@@ -52,4 +54,7 @@ Run
 bin/server
 ```
 
-Open your browser: localhost:3000
+Open your browser: `localhost:3000`
+
+## Deploy heroku
+
