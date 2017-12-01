@@ -4,7 +4,7 @@ Instagram clone
 
 ## Code Status
 
-[![Build Status](https://api.travis-ci.org/kensupermen/instagram.svg?branch=develop)](http://travis-ci.org/kensupermen/instagram)
+[![Build Status](https://travis-ci.org/kensupermen/instagram.svg?branch=master)](https://travis-ci.org/kensupermen/instagram)
 
 Demo: [Instagram](https://instagramclone2908.herokuapp.com/)
 
@@ -14,7 +14,7 @@ Demo: [Instagram](https://instagramclone2908.herokuapp.com/)
 - ReactJS (Frontend)
 - Postgresql (Database)
 - Redis to cache session and query
-- AWS S3 to save photos
+- Host image on AWS S3
 
 ## User stories
 
@@ -26,7 +26,7 @@ Demo: [Instagram](https://instagramclone2908.herokuapp.com/)
 * [ ] User can add hastag.
 * [ ] User can see a profile.
 * [ ] User can follow another people.
-* [ ] Host images to AWS S3.
+* [x] Host images on AWS S3.
 * [ ] Cache query.
 
 
@@ -38,18 +38,26 @@ Demo: [Instagram](https://instagramclone2908.herokuapp.com/)
 4. Push to the branch: git push origin my-new-feature
 5. Submit a pull request to develop branch :D
 
-## How to run
+## How to run on development
 
 Make sure you install `yarn` and install all package dependent
 
-Please install ImageMagick
-In MacOS: `brew install imagemagick`
+Please install ImageMagick.
+ - In MacOS: `brew install imagemagick`
 
 ```
 yarn install
 ```
 
-Run 
+Setup environment variables
+ - SECRET_KEY_DEVISE
+ - S3_BUCKET_NAME
+ - AWS_ACCESS_KEY_ID
+ - AWS_SECRET_ACCESS_KEY
+ - AWS_REGION
+ - AWS_S3_HOST_NAME
+
+Finally run 
 ```
 bin/server
 ```

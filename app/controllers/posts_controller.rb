@@ -1,11 +1,19 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = current_user.posts.create!(post_params)
-    redirect_to posts_path
+    @post = current_user.posts.new(post_params)
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   private

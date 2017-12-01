@@ -42,6 +42,8 @@ gem 'simple_form'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 gem 'aws-sdk', '< 3.0'
+gem 'acts_as_votable', '~> 0.11.1'
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,6 +1,7 @@
 import * as React from "react";
 import axios from 'axios';
 import Comments from "./comments"
+import Like from "./like"
 
 const prefixURL = '/api/v1/'
 
@@ -14,7 +15,7 @@ class Posts extends React.Component {
   }
 
   componentDidMount() {
-    let URL = prefixURL + 'posts/list';
+    let URL = prefixURL + 'posts';
     axios.get(URL)
       .then((response) => {
         this.setState({
@@ -40,9 +41,9 @@ class Posts extends React.Component {
                     <div className="image">
                       <img src= { post.image } alt="" />
                     </div>
-                    <hr />
+                    <Like post={post} />
 
-                    <Comments post={post}></Comments>
+                    <Comments post={post} />
                   </div>
                 )
               })

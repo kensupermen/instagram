@@ -1,6 +1,8 @@
 module Api
   module V1
     class CommentsController < BaseController
+      before_action :authenticate_user!
+
       def create
         @comment = Comment.new(comment_params)
         @comment.post_id = params[:id]
