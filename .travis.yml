@@ -1,12 +1,18 @@
 language: ruby
 rvm:
-  - 2.4.1
+  - 2.4.2
+
+env:
+  global:
+    - SECRET_KEY_DEVISE=secret-key-devise
+    - S3_BUCKET_NAME=instagram-clone
+    - AWS_ACCESS_KEY_ID=aws-key-id
+    - AWS_SECRET_ACCESS_KEY=aws-secret-access-key
+    - AWS_REGION=s3.ap-southeast-1
+    - AWS_S3_HOST_NAME=s3.ap-southeast-1.amazonaws.com
 
 addons:
-  postgresql: "9.6.5"
+  postgresql: "9.4"
 
 before_script:
 - bundle exec rake db:create db:migrate RAILS_ENV=test
-
-script:
-  - bundle exec rspec
