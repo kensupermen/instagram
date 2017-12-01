@@ -2,7 +2,6 @@ import * as React from "react";
 import axios from 'axios';
 
 const prefixURL = '/api/v1/'
-const domain = 'http://' + window.location.host
 
 class Comments extends React.Component {
   constructor(props) {

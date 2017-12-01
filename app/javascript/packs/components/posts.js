@@ -3,7 +3,6 @@ import axios from 'axios';
 import Comments from "./comments"
 
 const prefixURL = '/api/v1/'
-const domain = 'http://' + window.location.host
 
 class Posts extends React.Component {
   constructor(props) {
@@ -39,7 +38,7 @@ class Posts extends React.Component {
                     <div className="username">{post.first_name + " " + post.last_name}</div>
                     <div className="caption">{post.caption}</div>
                     <div className="image">
-                      <img src= { domain + post.image } alt="" />
+                      <img src= { post.image } alt="" />
                     </div>
                     <hr />
 

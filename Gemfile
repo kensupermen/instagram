@@ -41,6 +41,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'simple_form'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+gem 'aws-sdk', '< 3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,10 +50,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'awesome_print'
-end
-
-group :production do
-  gem 'rails_12factor'
+  gem 'dotenv-rails'
 end
 
 group :development do
