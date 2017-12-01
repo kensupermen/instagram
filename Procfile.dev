@@ -1,3 +1,2 @@
-web: bundle exec bin/server -p=3000 -b 0.0.0.0
-webpacker: ./bin/webpack-dev-server
-release: bundle exec bin/rails webpacker:compile && bin/rails db:migrate
+web: bundle exec bin/server -p=3000
+webpacker: bin/webpack-dev-server
