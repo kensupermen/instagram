@@ -4,11 +4,12 @@ json.posts @posts do |post|
   json.image post.image.url(:medium)
   json.first_name post.user.first_name
   json.last_name post.user.last_name
+  json.likes_size post.get_likes.size
 
-  json.comments post.comments
+  comments = []
+  post.comments.each do |comment|
+    comments << { username: comment.user, message: comment.message }
+  end
 
-  # json.comments do |comment|
-    # json.username = comment.user
-    # json.message = comment.message
-  # end
+  json.comments comments
 end

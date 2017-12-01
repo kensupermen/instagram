@@ -8,7 +8,6 @@ class Comments extends React.Component {
     super(props);
 
     this.state = {
-      // comments: []
       comments: props.post.comments
     }
   }
@@ -40,6 +39,10 @@ class Comments extends React.Component {
     }
   }
 
+  _getUsername(comment) {
+    return comment.username.first_name + " " + comment.username.last_name
+  }
+
   render() {
     return <div className="form-group">
              <input type="text" className='form-control' placeholder="Write a comment..." ref="txtMessage"  onKeyPress={(e) => this._handleKeyPress(e)}/>
@@ -48,7 +51,7 @@ class Comments extends React.Component {
                   this.state.comments.map((comment) => {
                     return (<div key={comment.id} className="comment">
                       <div className="row">
-                        <div className="commenter">kensupermen</div>
+                        <div className="commenter">{ this._getUsername(comment) }</div>
                         <div className="message">
                           {comment.message}
                         </div>
