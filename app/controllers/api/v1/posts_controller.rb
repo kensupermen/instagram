@@ -15,6 +15,10 @@ module Api
         post.liked_by current_user
       end
 
+      def unlike
+        post.unliked_by current_user
+      end
+
       private
 
       def post

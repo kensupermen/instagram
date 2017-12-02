@@ -15,7 +15,7 @@ class Posts extends React.Component {
   }
 
   componentDidMount() {
-    let URL = prefixURL + 'posts/list';
+    let URL = prefixURL + 'posts';
     axios.get(URL)
       .then((response) => {
         this.setState({
