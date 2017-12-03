@@ -4,4 +4,9 @@ json.image @post.image.url(:medium)
 json.first_name @post.user.first_name
 json.last_name @post.user.last_name
 
-json.comments @post.comments
+comments = []
+@post.comments.each do |comment|
+  comments << { user: comment.user, message: comment.message }
+end
+
+json.comments comments
