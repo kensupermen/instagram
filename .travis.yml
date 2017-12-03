@@ -15,4 +15,8 @@ addons:
   postgresql: "9.4"
 
 before_script:
-- bundle exec rake db:create db:migrate RAILS_ENV=test
+  - bundle exec rake db:create db:migrate RAILS_ENV=test
+
+after_deploy:
+  - bundle exec rake db:migrate webpacker:compile
+

@@ -5,6 +5,7 @@ Instagram clone
 ## Code Status
 
 [![Build Status](https://travis-ci.org/kensupermen/instagram.svg?branch=master)](https://travis-ci.org/kensupermen/instagram)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c997c6ac01d5f223698c/maintainability)](https://codeclimate.com/github/kensupermen/instagram/maintainability)
 
 Demo: [Instagram](https://instagramclone2908.herokuapp.com/)
 
@@ -22,7 +23,7 @@ Demo: [Instagram](https://instagramclone2908.herokuapp.com/)
 * [x] User can upload images.
 * [x] User can post image with caption.
 * [x] User can comment on image.
-* [ ] User can like images.
+* [x] User can like images.
 * [ ] User can add hastag.
 * [ ] User can see a profile.
 * [ ] User can follow another people.
@@ -65,4 +66,5 @@ bin/server
 Open your browser: `localhost:3000`
 
 ## Deploy heroku
-
+After push source code to Heroku, you should compile js and css, please run:
+`heroku run rake webpacker:compile`
