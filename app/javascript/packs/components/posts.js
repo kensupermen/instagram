@@ -36,7 +36,12 @@ class Posts extends React.Component {
               this.state.posts.map((post) => {
                 return (
                   <div key={post.id} className="post" >
-                    <div className="username">{post.first_name + " " + post.last_name}</div>
+                    <div className="avatar">
+                      <img src="avatar.png" alt="avatar" />
+                    </div>
+                    <div className="username">
+                      {post.first_name + " " + post.last_name}
+                    </div>
                     <div className="caption">{post.caption}</div>
                     <div className="image">
                       <img src= { post.image } alt="" />
