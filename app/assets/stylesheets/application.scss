@@ -1,12 +1,6 @@
 @import 'bootstrap';
 @import 'font-awesome';
 
-.container {
-  .page {
-    margin: 20px;
-  }
-}
-
 .post {
   margin: 20px auto;
   padding: 10px;
@@ -42,6 +36,27 @@
     padding: 0px 10px;
     color: blue;
   }
+}
+
+.profile {
+  .avatar {
+    img {
+      width: 150px;
+      height: 150px;
+      margin: 10px 5px;
+      float: left
+    }
+  }
+  .user-info {
+    padding: 50px 200px;
+    span {
+      font-size: 32px;
+    }
+  }
+  .images {
+    margin: 50px;
+  }
+
 }
 
 .modal.show .modal-dialog {
