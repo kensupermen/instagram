@@ -49,14 +49,11 @@ class Comments extends React.Component {
               <div className="comments">
                 {
                   this.state.comments.map((comment) => {
-                    return (<div key={comment.id} className="comment">
-                      <div className="row">
+                    return (
+                      <div key={comment.id} className=" row comment">
                         <div className="commenter">{ this._getUsername(comment) }</div>
-                        <div className="message">
-                          {comment.message}
-                        </div>
-                      </div>
-                    </div>)
+                        <div className="message"> {comment.message} </div>
+                      </div>)
                   })
                 }
               </div>
