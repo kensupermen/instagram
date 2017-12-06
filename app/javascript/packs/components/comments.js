@@ -40,7 +40,7 @@ class Comments extends React.Component {
   }
 
   _getUsername(comment) {
-    return comment.username.first_name + " " + comment.username.last_name
+    return comment.user.first_name + " " + comment.user.last_name
   }
 
   render() {

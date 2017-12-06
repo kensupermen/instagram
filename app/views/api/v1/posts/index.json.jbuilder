@@ -9,7 +9,7 @@ json.posts @posts do |post|
 
   comments = []
   post.comments.each do |comment|
-    comments << { username: comment.user, message: comment.message }
+    comments << { user: comment.user, message: comment.message }
   end
 
   json.comments comments
