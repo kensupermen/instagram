@@ -21,7 +21,8 @@ class Like extends React.Component {
   }
 
   _likeClassName(status) {
-    return status === true ? "btn btn-primary btn-sm" : "btn btn-outline-primary"
+    console.log(status)
+    return status === true ? "btn btn-primary btn-sm" : "btn btn-outline-primary btn-sm"
   }
 
   _handleOnLike() {
@@ -33,7 +34,8 @@ class Like extends React.Component {
         .then((response) => {
           this.setState({
             likes_size: this.props.post.likes_size + 1,
-            like_status: LIKED
+            like_status: LIKED,
+            like_class: 'btn btn-primary btn-sm'
           })
         })
     }
