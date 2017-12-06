@@ -29,12 +29,16 @@
   }
   
   .caption {
-    margin: 10px 0px;
+    margin: 5px 0px;
+    padding: 10px;
   }
 
   .commenter {
-    padding: 0px 10px;
+    padding: 0px 5px;
     color: blue;
+  }
+  .comment {
+    margin: 10px 0px;
   }
 }
 

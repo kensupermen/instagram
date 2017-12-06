@@ -29,16 +29,15 @@ class Posts extends React.Component {
 
   render() {
     return (
-      <div className="container">
         <div className="row">
           {
             this.state.posts.map((post) => {
               return (
                 <div key={post.id} className="post" >
-                  <div className="avatar"> <img src="boy.png" alt="avatar" /> </div>
-                  <div className="username"> {post.first_name + " " + post.last_name} </div>
+                  <div className="avatar"> <img src="/boy.png" alt="avatar" /> </div>
+                  <div className="username">{post.first_name + " " + post.last_name} </div>
                   <div className="caption">{post.caption}</div>
-                  <div className="image"> <img src= { post.image } alt="" /> </div>
+                  <div className="image"> <img src= { post.image } alt="image" /> </div>
                   <Like post={post} />
 
                   <Comments post={post} />
@@ -47,7 +46,6 @@ class Posts extends React.Component {
             })
           }
         </div>
-      </div>
     );
   }
 }

@@ -14,10 +14,9 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    let URL = prefixURL + 'users/1';
+    let URL = prefixURL + 'users/3';
     axios.get(URL)
       .then((response) => {
-        console.log(response.data);
 
         this.setState({
           user: response.data
@@ -28,6 +27,14 @@ class Profile extends React.Component {
       });
   }
 
+  _getUsername() {
+    let user = this.state.user
+    if (user.first_name != null && user.last_name != null)
+      return user.first_name + " " + user.last_name
+
+    return "";
+  }
+
   render() {
     return (
       <div>
@@ -35,7 +42,7 @@ class Profile extends React.Component {
           <div className="avatar"><img src="/boy.png" alt="avatar" /></div>
           <div className="user-info">
             <span>
-              {this.state.user.first_name + " " +this.state.user.last_name}
+              { this._getUsername() }
             </span>
           </div>
         </div>
