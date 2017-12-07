@@ -14,7 +14,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    let URL = prefixURL + 'users/2';
+    let URL = prefixURL + window.location.pathname;
     axios.get(URL)
       .then((response) => {
 

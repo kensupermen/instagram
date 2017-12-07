@@ -36,7 +36,11 @@ class Posts extends React.Component {
               return (
                 <div key={post.id} className="post" >
                   <div className="avatar"> <img src="/boy.png" alt="avatar" /> </div>
-                  <div className="username">{post.first_name + " " + post.last_name} </div>
+                  <div className="username">
+                    <a href={"users/" + post.user.id}>
+                      {post.first_name + " " + post.last_name}
+                    </a>
+                  </div>
                   <div className="caption">{post.caption}</div>
                   <div className="image"> <img src= { post.image } alt="image" /> </div>
                   <Like post={post} />
