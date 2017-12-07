@@ -21,7 +21,6 @@ class Like extends React.Component {
   }
 
   _likeClassName(status) {
-    console.log(status)
     return status === true ? "btn btn-primary btn-sm" : "btn btn-outline-primary btn-sm"
   }
 

@@ -4,7 +4,7 @@ module Api
       before_action :authenticate_user!, only: :like
 
       def index
-        @posts = Post.all.order('created_at desc')
+        @posts = Post.includes(:user, comments: [:user]).all.order('created_at desc')
       end
 
       def show
@@ -22,7 +22,7 @@ module Api
       private
 
       def post
-        Post.find params[:id]
+        Post.includes(:user, comments: [:user]).find params[:id]
       end
     end
   end
