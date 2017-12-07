@@ -14,7 +14,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    let URL = prefixURL + 'users/3';
+    let URL = prefixURL + 'users/2';
     axios.get(URL)
       .then((response) => {
 
@@ -41,9 +41,7 @@ class Profile extends React.Component {
         <div className="profile">
           <div className="avatar"><img src="/boy.png" alt="avatar" /></div>
           <div className="user-info">
-            <span>
-              { this._getUsername() }
-            </span>
+            <span> { this._getUsername() } </span>
           </div>
         </div>
         <div className="images">
