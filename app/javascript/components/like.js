@@ -1,9 +1,9 @@
 import * as React from "react";
 import axios from 'axios';
+import Api from './api'
 
 const LIKE = 'LIKE';
 const LIKED = 'LIKED';
-const prefixURL = '/api/v1/'
 
 class Like extends React.Component {
   constructor(props) {
@@ -21,13 +21,12 @@ class Like extends React.Component {
   }
 
   _likeClassName(status) {
-    console.log(status)
     return status === true ? "btn btn-primary btn-sm" : "btn btn-outline-primary btn-sm"
   }
 
   _handleOnLike() {
     let likeStatus = this.state.like_status;
-    let URL = prefixURL + 'posts/'+ this.props.post.id + '/like';
+    let URL = Api.like(this.props.post.id)
 
     if (likeStatus === LIKE ) {
       axios.post(URL)

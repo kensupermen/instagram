@@ -1,9 +1,9 @@
 import * as React from "react";
 import axios from 'axios';
+
 import Comments from "./comments"
 import Like from "./like"
-
-const prefixURL = '/api/v1/'
+import Api from './api'
 
 class Posts extends React.Component {
   constructor(props) {
@@ -14,16 +14,13 @@ class Posts extends React.Component {
     }
   }
 
-  componentDidMount() {
-    let URL = prefixURL + 'posts';
+  componentWillMount() {
+    let URL = Api.getPosts()
     axios.get(URL)
       .then((response) => {
         this.setState({
           posts: response.data.posts
         })
-      })
-      .catch((error) => {
-        console.log(error);
       });
   }
 
@@ -35,12 +32,16 @@ class Posts extends React.Component {
               return (
                 <div key={post.id} className="post" >
                   <div className="avatar"> <img src="/boy.png" alt="avatar" /> </div>
-                  <div className="username">{post.first_name + " " + post.last_name} </div>
+                  <div className="username">
+                    <a href={"users/" + post.user.id}>
+                      {post.first_name + " " + post.last_name}
+                    </a>
+                  </div>
                   <div className="caption">{post.caption}</div>
                   <div className="image"> <img src= { post.image } alt="image" /> </div>
                   <Like post={post} />
 
-                  <Comments post={post} />
+                  <Comments key={post.id} post={post} />
                 </div>
               )
             })
