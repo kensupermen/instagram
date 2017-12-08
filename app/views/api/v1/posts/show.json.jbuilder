@@ -7,7 +7,7 @@ json.last_name @post.user.last_name
 
 comments = []
 @post.comments.each do |comment|
-  comments << { user: comment.user, message: comment.message }
+  comments << { id: comment.id, user: comment.user, message: comment.message }
 end
 
 json.comments comments

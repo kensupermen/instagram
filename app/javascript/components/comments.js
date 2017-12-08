@@ -1,7 +1,9 @@
 import * as React from "react";
 import axios from 'axios';
-import CommentForm from "./_comment_form"
 import Api from './api'
+
+import CommentForm from "./_comment_form"
+import CommentList from './_comment_list'
 
 class Comments extends React.Component {
   constructor(props) {
@@ -37,24 +39,10 @@ class Comments extends React.Component {
       })
   }
 
-  _getUsername(comment) {
-    return comment.user.first_name + " " + comment.user.last_name
-  }
-
   render() {
     return <div>
               <CommentForm onCommentSubmit={(message) => this.handleCommentSubmit(message)} />
-              <div className="comments">
-                {
-                  this.state.comments.map((comment) => {
-                    return (
-                      <div key={comment.id} className=" row comment">
-                        <div className="commenter">{ this._getUsername(comment) }</div>
-                        <div className="message"> {comment.message} </div>
-                      </div>)
-                  })
-                }
-              </div>
+              <CommentList comments={this.state.comments} />
             </div>
   }
 }

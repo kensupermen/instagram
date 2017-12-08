@@ -44,7 +44,7 @@ class Posts extends React.Component {
                   <div className="image"> <img src= { post.image } alt="image" /> </div>
                   <Like post={post} />
 
-                  <Comments post={post} />
+                  <Comments key={post.id} post={post} />
                 </div>
               )
             })
