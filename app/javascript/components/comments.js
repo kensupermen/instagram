@@ -1,8 +1,7 @@
 import * as React from "react";
 import axios from 'axios';
 import CommentForm from "./_comment_form"
-
-const prefixURL = '/api/v1/'
+import Api from './api'
 
 class Comments extends React.Component {
   constructor(props) {
@@ -14,7 +13,8 @@ class Comments extends React.Component {
   }
 
   loadComments() {
-    let URL = prefixURL + 'posts/'+ this.props.post.id;
+    let URL = Api.getPost(this.props.post.id);
+
     axios.get(URL)
       .then((response) => {
         this.setState({
@@ -27,7 +27,7 @@ class Comments extends React.Component {
   }
 
   handleCommentSubmit(message) {
-    let url = prefixURL + 'posts/' + this.props.post.id + '/comments/create'
+    let url = Api.createComment(this.props.post.id);
     let params = { 'comment':
                       { 'message': message }
                   }

@@ -3,8 +3,7 @@ import axios from 'axios';
 
 import Comments from "./comments"
 import Like from "./like"
-
-const prefixURL = '/api/v1/'
+import Api from './api'
 
 class Posts extends React.Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class Posts extends React.Component {
   }
 
   componentDidMount() {
-    let URL = prefixURL + 'posts';
+    let URL = Api.getPosts()
     axios.get(URL)
       .then((response) => {
         this.setState({
