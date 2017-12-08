@@ -1,5 +1,6 @@
 import * as React from "react";
 import axios from 'axios';
+import CommentForm from "./_comment_form"
 
 const prefixURL = '/api/v1/'
 
@@ -16,7 +17,6 @@ class Comments extends React.Component {
     let URL = prefixURL + 'posts/'+ this.props.post.id;
     axios.get(URL)
       .then((response) => {
-        this.refs.txtMessage.value = "";
         this.setState({
           comments: response.data.comments
         })
@@ -26,17 +26,15 @@ class Comments extends React.Component {
       });
   }
 
-  _handleKeyPress(e) {
-    if (e.key === 'Enter') {
-      let url = prefixURL + 'posts/' + this.props.post.id + '/comments/create'
-      let params = { 'comment':
-                        { 'message': this.refs.txtMessage.value }
-                   }
-      axios.post(url, params)
-        .then((response) => {
-          this.loadComments()
-        })
-    }
+  handleCommentSubmit(message) {
+    let url = prefixURL + 'posts/' + this.props.post.id + '/comments/create'
+    let params = { 'comment':
+                      { 'message': message }
+                  }
+    axios.post(url, params)
+      .then((response) => {
+        this.loadComments()
+      })
   }
 
   _getUsername(comment) {
@@ -44,8 +42,8 @@ class Comments extends React.Component {
   }
 
   render() {
-    return <div className="form-group">
-             <input type="text" className='form-control' placeholder="Write a comment..." ref="txtMessage"  onKeyPress={(e) => this._handleKeyPress(e)}/>
+    return <div>
+              <CommentForm onCommentSubmit={(message) => this.handleCommentSubmit(message)} />
               <div className="comments">
                 {
                   this.state.comments.map((comment) => {
