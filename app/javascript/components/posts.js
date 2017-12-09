@@ -26,7 +26,7 @@ class Posts extends React.Component {
 
   render() {
     return (
-        <div className="row">
+        <div className="row" data-turbolinks="false">
           {
             this.state.posts.map((post) => {
               return (

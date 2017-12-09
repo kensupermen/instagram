@@ -1,7 +1,6 @@
 import * as React from "react";
 import axios from 'axios';
-
-const prefixURL = '/api/v1/'
+import masonry from 'masonry-layout';
 
 class Profile extends React.Component {
 
@@ -19,16 +18,27 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div>
         <div className="profile">
           <div className="avatar"><img src="/boy.png" alt="avatar" /></div>
           <div className="user-info">
             <span> { this._getUsername() } </span>
           </div>
+
+          <div className="images">
+            <div className="grid js-masonry" data-masonry-options='{ "columnWidth": 160, "itemSelector": ".grid-item" }'>
+              {
+                this.props.images.map((image) => {
+                  return (
+                    <div key={image} className="grid-item">
+                      <img src={image} alt={image} />
+                    </div>
+                  )
+                })
+              }
+            </div>
+          </div>
+
         </div>
-        <div className="images">
-        </div>
-      </div>
     )
   }
 }

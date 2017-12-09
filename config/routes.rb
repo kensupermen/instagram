@@ -13,8 +13,6 @@ Rails.application.routes.draw do
       get 'posts/:id', to: 'api/v1/posts#show'
       post 'posts/:id/like', to: 'api/v1/posts#like'
       post 'posts/:id/comments/create', to: 'api/v1/comments#create'
-
-      get 'users/:id', to: 'api/v1/users#show'
     end
   end
 end
