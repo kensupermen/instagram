@@ -52,14 +52,21 @@
       float: left
     }
   }
+
   .user-info {
     padding: 50px 200px;
     span {
       font-size: 32px;
     }
   }
+
   .images {
-    margin: 50px;
+    clear: both;
+    padding: 20px;
+
+    .grid-item {
+      margin-bottom: 10px;
+    }
   }
 
 }

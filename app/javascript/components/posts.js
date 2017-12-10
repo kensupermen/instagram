@@ -26,19 +26,19 @@ class Posts extends React.Component {
 
   render() {
     return (
-        <div className="row">
+        <div className="row" data-turbolinks="false">
           {
             this.state.posts.map((post) => {
               return (
                 <div key={post.id} className="post" >
-                  <div className="avatar"> <img src="/boy.png" alt="avatar" /> </div>
+                  <div className="avatar"> <img src="/boy.png" alt="avatar" className="img-circle" /> </div>
                   <div className="username">
                     <a href={"users/" + post.user.id}>
                       {post.first_name + " " + post.last_name}
                     </a>
                   </div>
                   <div className="caption">{post.caption}</div>
-                  <div className="image"> <img src= { post.image } alt="image" /> </div>
+                  <div className="image"> <img src= { post.image } alt="image" className="img-responsive"/> </div>
                   <Like post={post} />
 
                   <Comments key={post.id} post={post} />

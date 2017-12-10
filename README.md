@@ -25,7 +25,7 @@ Demo: [Instagram](https://instagramclone2908.herokuapp.com/)
 * [x] User can comment on image.
 * [x] User can like images.
 * [ ] User can add hastag.
-* [ ] User can see a profile.
+* [x] User can see a profile.
 * [ ] User can follow another people.
 * [x] Host images on AWS S3.
 * [ ] Cache query.
