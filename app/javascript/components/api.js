@@ -19,6 +19,10 @@ class Api {
   static getPosts() {
     return prefixURL + 'posts'
   }
+
+  static getUser(userId) {
+    return prefixURL + 'users/' + userId
+  }
 }
 
 export default Api;
