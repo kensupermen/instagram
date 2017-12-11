@@ -1,6 +1,8 @@
 import * as React from "react";
 import axios from 'axios';
-import masonry from 'masonry-layout';
+import Masonry from 'masonry-layout';
+import $ from 'jquery'
+import imagesLoaded from 'imagesloaded'
 
 class Profile extends React.Component {
 
@@ -16,6 +18,22 @@ class Profile extends React.Component {
     return "";
   }
 
+  componentDidMount() {
+    $(function() {
+      imagesLoaded( '.grid', function() {
+        // images have loaded
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry(elem, {
+          // options
+          itemSelector: '.grid-item',
+          columnWidth: 80,
+          gutter: 20,
+          fitWidth: true
+        });
+      });
+    });
+  }
+
   render() {
     return (
         <div className="profile">
@@ -25,7 +43,7 @@ class Profile extends React.Component {
           </div>
 
           <div className="images">
-            <div className="grid js-masonry" data-masonry-options='{ "columnWidth": 10, "itemSelector": ".grid-item" }'>
+            <div className="grid">
               {
                 this.props.images.map((image) => {
                   return (
