@@ -1,5 +1,2 @@
 .container
-  .page
-    div id="root"
-
-= javascript_pack_tag 'users'
+  = react_component('profile', user: @user, images: @images)
