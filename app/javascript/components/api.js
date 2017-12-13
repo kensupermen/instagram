@@ -16,13 +16,15 @@ class Api {
     return prefixURL + 'posts/' + postId + '/like'
   }
 
-  static getPosts() {
-    return prefixURL + 'posts'
+  static getPosts(pageNumber) {
+    return prefixURL + 'posts' + '?page=' + pageNumber
+    // return prefixURL + 'posts'
   }
 
   static getUser(userId) {
     return prefixURL + 'users/' + userId
   }
+
 }
 
 export default Api;

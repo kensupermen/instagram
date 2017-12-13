@@ -3,8 +3,10 @@ module Api
     class PostsController < BaseController
       before_action :authenticate_user!, only: :like
 
+      PER_PAGE = 5
+
       def index
-        @posts = Post.includes(:user, comments: [:user]).all.order('created_at desc')
+        @posts = Post.includes(:user, comments: [:user]).all.order('created_at desc').page(params[:page]).per(PER_PAGE)
       end
 
       def show

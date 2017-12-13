@@ -22,14 +22,20 @@ class Profile extends React.Component {
     $(function() {
       imagesLoaded( '.grid', function() {
         // images have loaded
-        var elem = document.querySelector('.grid');
-        var msnry = new Masonry(elem, {
+        var grid= document.querySelector('.grid');
+        var msnry = new Masonry(grid, {
           // options
           itemSelector: '.grid-item',
           columnWidth: 80,
           gutter: 20,
-          fitWidth: true
+          transitionDuration: 0,
+          initLayout: false
         });
+        msnry.once('layoutComplete', () => {
+          grid.classList.add('load')
+        })
+
+        msnry.layout()
       });
     });
   }
