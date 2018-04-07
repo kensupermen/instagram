@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 import axios from 'axios';
 import Api from './api'
 
-import CommentForm from "./_comment_form"
+import CommentForm from './_comment_form'
 import CommentList from './_comment_list'
 
 class Comments extends React.Component {

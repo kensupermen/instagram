@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import axios from 'axios';
 import Api from './api'
 
@@ -21,7 +21,7 @@ class Like extends React.Component {
   }
 
   _likeClassName(status) {
-    return status === true ? "btn btn-primary btn-sm" : "btn btn-outline-primary btn-sm"
+    return status === true ? 'btn btn-primary btn-sm' : 'btn btn-outline-primary btn-sm'
   }
 
   _handleOnLike() {

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import axios from 'axios';
 import Masonry from 'masonry-layout';
 import $ from 'jquery'
@@ -13,9 +13,9 @@ class Profile extends React.Component {
   _getUsername() {
     let user = this.props.user
     if (user.first_name != null && user.last_name != null)
-      return user.first_name + " " + user.last_name
+      return user.first_name + ' ' + user.last_name
 
-    return "";
+    return '';
   }
 
   componentDidMount() {

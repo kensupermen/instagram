@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 class CommentForm extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class CommentForm extends React.Component {
   _handleSubmit(e) {
     e.preventDefault();
     let commentFormData = this.refs.txtMessage.value
-    this.refs.txtMessage.value = "";
+    this.refs.txtMessage.value = '';
 
     this.props.onCommentSubmit(commentFormData)
   }

@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 import axios from 'axios';
 
-import Comments from "./comments"
-import Like from "./like"
+import Comments from './comments'
+import Like from './like'
 import Api from './api'
 
 class Posts extends React.Component {
@@ -33,8 +33,8 @@ class Posts extends React.Component {
                 <div key={post.id} className="post" >
                   <div className="avatar"> <img src="/boy.png" alt="avatar" className="img-circle" /> </div>
                   <div className="username">
-                    <a href={"users/" + post.user.id}>
-                      {post.first_name + " " + post.last_name}
+                    <a href={'users/' + post.user.id}>
+                      {post.first_name + ' ' + post.last_name}
                     </a>
                   </div>
                   <div className="caption">{post.caption}</div>
