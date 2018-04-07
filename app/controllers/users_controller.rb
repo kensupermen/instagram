@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find params[:id]
     @images = []
-    @user.posts.map do |post|
+    @user.posts.each do |post|
       @images << post.image.url(:small)
     end
   end
