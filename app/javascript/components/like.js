@@ -1,6 +1,6 @@
 import * as React from "react";
 import axios from 'axios';
-import Api from './api'
+import Api from './api';
 
 const LIKE = 'LIKE';
 const LIKED = 'LIKED';
@@ -13,20 +13,20 @@ class Like extends React.Component {
       likes_size: props.post.likes_size,
       like_status: this._likeStatus(props.post.liked),
       like_class: this._likeClassName(props.post.liked)
-    }
+    };
   }
 
   _likeStatus(status) {
-    return status === true ? LIKED : LIKE
+    return status === true ? LIKED : LIKE;
   }
 
   _likeClassName(status) {
-    return status === true ? "btn btn-primary btn-sm" : "btn btn-outline-primary btn-sm"
+    return status === true ? "btn btn-primary btn-sm" : "btn btn-outline-primary btn-sm";
   }
 
   _handleOnLike() {
     let likeStatus = this.state.like_status;
-    let URL = Api.like(this.props.post.id)
+    let URL = Api.like(this.props.post.id);
 
     if (likeStatus === LIKE ) {
       axios.post(URL)
@@ -35,8 +35,8 @@ class Like extends React.Component {
             likes_size: this.props.post.likes_size + 1,
             like_status: LIKED,
             like_class: 'btn btn-primary btn-sm'
-          })
-        })
+          });
+        });
     }
   }
 
@@ -52,7 +52,7 @@ class Like extends React.Component {
                 <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
               </div>
               <hr />
-          </div>
+          </div>;
   }
 }
 

@@ -1,8 +1,8 @@
 import * as React from "react";
 import axios from 'axios';
 import Masonry from 'masonry-layout';
-import $ from 'jquery'
-import imagesLoaded from 'imagesloaded'
+import $ from 'jquery';
+import imagesLoaded from 'imagesloaded';
 
 class Profile extends React.Component {
 
@@ -11,9 +11,9 @@ class Profile extends React.Component {
   }
 
   _getUsername() {
-    let user = this.props.user
+    let user = this.props.user;
     if (user.first_name != null && user.last_name != null)
-      return user.first_name + " " + user.last_name
+      return user.first_name + " " + user.last_name;
 
     return "";
   }
@@ -50,14 +50,14 @@ class Profile extends React.Component {
                     <div key={image} className="grid-item">
                       <img src={image} alt={image} className="img-responsive" />
                     </div>
-                  )
+                  );
                 })
               }
             </div>
           </div>
 
         </div>
-    )
+    );
   }
 }
 

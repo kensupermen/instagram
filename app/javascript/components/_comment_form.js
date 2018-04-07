@@ -7,10 +7,10 @@ class CommentForm extends React.Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    let commentFormData = this.refs.txtMessage.value
+    let commentFormData = this.refs.txtMessage.value;
     this.refs.txtMessage.value = "";
 
-    this.props.onCommentSubmit(commentFormData)
+    this.props.onCommentSubmit(commentFormData);
   }
 
   render() {
@@ -20,7 +20,7 @@ class CommentForm extends React.Component {
                   <input type="text" className='form-control' placeholder="Write a comment..." ref="txtMessage" />
                 </form>
               </div>
-            )
+            );
   }
 }
 

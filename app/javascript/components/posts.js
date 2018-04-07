@@ -1,9 +1,9 @@
 import * as React from "react";
 import axios from 'axios';
 
-import Comments from "./comments"
-import Like from "./like"
-import Api from './api'
+import Comments from "./comments";
+import Like from "./like";
+import Api from './api';
 
 class Posts extends React.Component {
   constructor(props) {
@@ -11,16 +11,16 @@ class Posts extends React.Component {
 
     this.state = {
       posts: []
-    }
+    };
   }
 
   componentWillMount() {
-    let URL = Api.getPosts()
+    let URL = Api.getPosts();
     axios.get(URL)
       .then((response) => {
         this.setState({
           posts: response.data.posts
-        })
+        });
       });
   }
 
@@ -43,7 +43,7 @@ class Posts extends React.Component {
 
                   <Comments key={post.id} post={post} />
                 </div>
-              )
+              );
             })
           }
         </div>
