@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.id @post.id
 json.caption @post.caption
 json.image @post.image.url(:medium)
