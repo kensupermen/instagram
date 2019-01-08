@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import axios from 'axios';
 import Api from './api';
 
@@ -12,7 +12,7 @@ class Like extends React.Component {
     this.state = {
       likes_size: props.post.likes_size,
       like_status: this._likeStatus(props.post.liked),
-      like_class: this._likeClassName(props.post.liked)
+      like_class: this._likeClassName(props.post.liked),
     };
   }
 
@@ -21,38 +21,46 @@ class Like extends React.Component {
   }
 
   _likeClassName(status) {
-    return status === true ? "btn btn-primary btn-sm" : "btn btn-outline-primary btn-sm";
+    return status === true
+      ? 'btn btn-primary btn-sm'
+      : 'btn btn-outline-primary btn-sm';
   }
 
   _handleOnLike() {
     let likeStatus = this.state.like_status;
     let URL = Api.like(this.props.post.id);
 
-    if (likeStatus === LIKE ) {
-      axios.post(URL)
-        .then((response) => {
-          this.setState({
-            likes_size: this.props.post.likes_size + 1,
-            like_status: LIKED,
-            like_class: 'btn btn-primary btn-sm'
-          });
+    if (likeStatus === LIKE) {
+      axios.post(URL).then(response => {
+        this.setState({
+          likes_size: this.props.post.likes_size + 1,
+          like_status: LIKED,
+          like_class: 'btn btn-primary btn-sm',
         });
+      });
     }
   }
 
   render() {
-    return <div>
-              <hr />
-              <button className={this.state.like_class} type="submit" onClick={() => this._handleOnLike()}>
-                <i className="fa fa-heart-o" aria-hidden="true"></i> &nbsp;
-                {this.state.like_status}
-              </button>
-              <hr />
-              <div className="liked">{this.state.likes_size} &nbsp;
-                <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
-              </div>
-              <hr />
-          </div>;
+    return (
+      <div>
+        <hr />
+        <button
+          className={this.state.like_class}
+          type="submit"
+          onClick={() => this._handleOnLike()}
+        >
+          <i className="fa fa-heart-o" aria-hidden="true" /> &nbsp;
+          {this.state.like_status}
+        </button>
+        <hr />
+        <div className="liked">
+          {this.state.likes_size} &nbsp;
+          <i className="fa fa-thumbs-o-up" aria-hidden="true" />
+        </div>
+        <hr />
+      </div>
+    );
   }
 }
 

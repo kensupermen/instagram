@@ -15,40 +15,41 @@ const extensionGlob = `**/*{${paths.extensions.join(',')}}*`;
 const packPaths = sync(join(paths.source, paths.entry, extensionGlob));
 
 module.exports = {
-  entry: packPaths.reduce(
-    (map, entry) => {
-      const localMap = map;
-      const namespace = relative(join(paths.source, paths.entry), dirname(entry));
-      localMap[join(namespace, basename(entry, extname(entry)))] = resolve(entry);
-      return localMap;
-    }, {}
-  ),
+  entry: packPaths.reduce((map, entry) => {
+    const localMap = map;
+    const namespace = relative(join(paths.source, paths.entry), dirname(entry));
+    localMap[join(namespace, basename(entry, extname(entry)))] = resolve(entry);
+    return localMap;
+  }, {}),
 
   output: {
     filename: '[name].js',
     path: resolve(paths.output, paths.entry),
-    publicPath
+    publicPath,
   },
 
   module: {
-    rules: sync(join(loadersDir, '*.js')).map(loader => require(loader))
+    rules: sync(join(loadersDir, '*.js')).map(loader => require(loader)),
   },
 
   plugins: [
     new webpack.EnvironmentPlugin(JSON.parse(JSON.stringify(env))),
-    new ExtractTextPlugin(env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css'),
-    new ManifestPlugin({ fileName: paths.manifest, publicPath, writeToFileEmit: true })
+    new ExtractTextPlugin(
+      env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css',
+    ),
+    new ManifestPlugin({
+      fileName: paths.manifest,
+      publicPath,
+      writeToFileEmit: true,
+    }),
   ],
 
   resolve: {
     extensions: paths.extensions,
-    modules: [
-      resolve(paths.source),
-      resolve(paths.node_modules)
-    ]
+    modules: [resolve(paths.source), resolve(paths.node_modules)],
   },
 
   resolveLoader: {
-    modules: [paths.node_modules]
-  }
+    modules: [paths.node_modules],
+  },
 };

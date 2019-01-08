@@ -1,14 +1,13 @@
 const prefixURL = '/api/v1/';
 
 class Api {
-  constructor() {
-  }
+  constructor() {}
 
   static createComment(postId) {
     return prefixURL + 'posts/' + postId + '/comments/create';
   }
 
-  static getPost(postId){
+  static getPost(postId) {
     return prefixURL + 'posts/' + postId;
   }
 

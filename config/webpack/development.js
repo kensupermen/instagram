@@ -7,10 +7,10 @@ module.exports = merge(sharedConfig, {
   devtool: 'sourcemap',
 
   stats: {
-    errorDetails: true
+    errorDetails: true,
   },
 
   output: {
-    pathinfo: true
-  }
+    pathinfo: true,
+  },
 });

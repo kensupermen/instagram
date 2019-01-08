@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 class CommentList extends React.Component {
   constructor(props) {
@@ -6,23 +6,21 @@ class CommentList extends React.Component {
   }
 
   _getUsername(comment) {
-    return comment.user.first_name + " " + comment.user.last_name;
+    return comment.user.first_name + ' ' + comment.user.last_name;
   }
 
   render() {
     return (
-          <div className="comments">
-            {
-              this.props.comments.map((comment) => {
-                return (
-                  <div key={comment.id} className=" row comment">
-                    <div className="commenter">{ this._getUsername(comment) }</div>
-                    <div className="message"> {comment.message} </div>
-                  </div>
-                );
-              })
-            }
-          </div>
+      <div className="comments">
+        {this.props.comments.map(comment => {
+          return (
+            <div key={comment.id} className=" row comment">
+              <div className="commenter">{this._getUsername(comment)}</div>
+              <div className="message"> {comment.message} </div>
+            </div>
+          );
+        })}
+      </div>
     );
   }
 }

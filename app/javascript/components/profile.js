@@ -1,11 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 import axios from 'axios';
 import Masonry from 'masonry-layout';
 import $ from 'jquery';
 import imagesLoaded from 'imagesloaded';
 
 class Profile extends React.Component {
-
   constructor(props) {
     super(props);
   }
@@ -13,14 +12,14 @@ class Profile extends React.Component {
   _getUsername() {
     let user = this.props.user;
     if (user.first_name != null && user.last_name != null)
-      return user.first_name + " " + user.last_name;
+      return user.first_name + ' ' + user.last_name;
 
-    return "";
+    return '';
   }
 
   componentDidMount() {
     $(function() {
-      imagesLoaded( '.grid', function() {
+      imagesLoaded('.grid', function() {
         // images have loaded
         var elem = document.querySelector('.grid');
         var msnry = new Masonry(elem, {
@@ -28,7 +27,7 @@ class Profile extends React.Component {
           itemSelector: '.grid-item',
           columnWidth: 80,
           gutter: 20,
-          fitWidth: true
+          fitWidth: true,
         });
       });
     });
@@ -36,27 +35,26 @@ class Profile extends React.Component {
 
   render() {
     return (
-        <div className="profile">
-          <div className="avatar"><img src="/boy.png" alt="avatar" className="img-circle" /></div>
-          <div className="user-info">
-            <span> { this._getUsername() } </span>
-          </div>
-
-          <div className="images">
-            <div className="grid">
-              {
-                this.props.images.map((image) => {
-                  return (
-                    <div key={image} className="grid-item">
-                      <img src={image} alt={image} className="img-responsive" />
-                    </div>
-                  );
-                })
-              }
-            </div>
-          </div>
-
+      <div className="profile">
+        <div className="avatar">
+          <img src="/boy.png" alt="avatar" className="img-circle" />
         </div>
+        <div className="user-info">
+          <span> {this._getUsername()} </span>
+        </div>
+
+        <div className="images">
+          <div className="grid">
+            {this.props.images.map(image => {
+              return (
+                <div key={image} className="grid-item">
+                  <img src={image} alt={image} className="img-responsive" />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     );
   }
 }
