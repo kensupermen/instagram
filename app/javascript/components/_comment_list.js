@@ -6,7 +6,7 @@ class CommentList extends React.Component {
   }
 
   _getUsername(comment) {
-    return comment.user.first_name + " " + comment.user.last_name
+    return comment.user.first_name + " " + comment.user.last_name;
   }
 
   render() {
@@ -19,11 +19,11 @@ class CommentList extends React.Component {
                     <div className="commenter">{ this._getUsername(comment) }</div>
                     <div className="message"> {comment.message} </div>
                   </div>
-                )
+                );
               })
             }
           </div>
-    )
+    );
   }
 }
 
